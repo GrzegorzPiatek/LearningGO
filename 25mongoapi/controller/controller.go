@@ -14,7 +14,7 @@ import (
 	"net/http"
 )
 
-const connectionString = "mongodb+srv://<root>:<root>@cluster0.9jw7kca.mongodb.net/?retryWrites=true&w=majority"
+const connectionString = "mongodb+srv://@cluster0.9jw7kca.mongodb.net/?retryWrites=true&w=majority"
 const dbName = "netflix"
 const colName = "watchlist"
 
@@ -57,7 +57,7 @@ func CreateMovie(w http.ResponseWriter, r *http.Request) {
 
 func MarkAsWatched(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/x-www-form-urlencoded")
-	w.Header().Set("Allow-Control-Allow-Methods", "POST")
+	w.Header().Set("Allow-Control-Allow-Methods", "PUT")
 
 	params := mux.Vars(r)
 
